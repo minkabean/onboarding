@@ -7,8 +7,11 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
+import jakarta.annotation.PostConstruct;
+
 import java.util.HashMap;
 import java.util.Map;
+
 
 @RestControllerAdvice
 public class ApiExceptionHandler {
@@ -26,4 +29,10 @@ public class ApiExceptionHandler {
 
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(body);
     }
+
+    @PostConstruct
+    public void init() {
+        System.out.println("✅ ApiExceptionHandler loaded");
+    }
+
 }
