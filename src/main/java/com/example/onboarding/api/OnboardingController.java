@@ -2,11 +2,13 @@ package com.example.onboarding.api;
 
 import com.example.onboarding.service.OnboardingService;
 import org.springframework.http.HttpStatus;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping("/v1")
+@Validated
 public class OnboardingController {
 
     private final OnboardingService service;
